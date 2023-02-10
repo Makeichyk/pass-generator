@@ -1,3 +1,5 @@
+document.querySelector(".creation-button").onclick = showPass;
+
 function randomInteger(max) {
   return Math.floor(Math.random() * max);
 }
@@ -72,8 +74,20 @@ function createPass(passLength) {
     result.push(CHAR[randomInteger(CHAR.length)]);
   }
   let password = result.join("");
-  console.log(password)
   return password;
 }
 
-createPass(8);
+function copyText() {
+  let copiedText = document.getElementById("myInput");
+  copiedText.select();
+  document.execCommand("copy");
+}
+
+function showPass() {
+  if(document.querySelector(".hidden")){
+    document.querySelector(".hidden").classList.remove("hidden");
+  }
+
+  let length = prompt('Specify password length', 8)
+  document.querySelector("input").value = ` ${createPass(Number(length))}`;
+}

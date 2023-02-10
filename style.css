@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300&display=swap');
+
 body {
   background-color: rgb(41, 40, 38);
 }
@@ -10,6 +12,10 @@ body {
 .logo-container h1 {
   font-size: 75px;
   color: aqua;
+  color:rgb(255,255,255,0.8);
+  letter-spacing:1rem;
+  font-family: 'Rajdhani', sans-serif;
+  text-shadow: 0px 0px 20px cyan, 0px 0px 40px rgb(15, 185, 194), 0px 0px 60px rgb(15, 185, 194),0px 0px 80px rgb(15, 185, 194), 0px 0px 100px rgb(15, 185, 194);
 }
 
 .creation-button {
@@ -17,12 +23,66 @@ body {
   align-items: center;
   justify-content: center;
   margin: 0 auto;
-  height: 150px;
-  width: 400px;
+  height: 100px;
+  width: 300px;
+  background-color: rgb(41, 40, 38);
   border-radius: 100px;
-  background-color: rgb(91, 205, 81);
+  transition: 0.6s;
+  margin-top: 100px;
 }
-.creation-button p{
-  color: rgb(255, 255, 255);
-  font-size: 35px;
+
+.creation-button:hover {
+  cursor: pointer;
+  color: black;
+  background-color: #fff;
+  border-radius: 100px;
+  box-shadow: 0px 0px 20px cyan, 0px 0px 40px rgb(15, 185, 194), 0px 0px 60px rgb(15, 185, 194),0px 0px 80px rgb(15, 185, 194), 0px 0px 100px rgb(15, 185, 194);
+}
+
+.creation-button:hover p {
+  color: black;
+}
+
+.creation-button p {
+  padding-left: 14px;
+  color:rgb(255,255,255,0.8);
+  font-size:55px;
+  letter-spacing:1rem;
+  font-family: 'Rajdhani', sans-serif;
+  text-shadow: 0px 0px 20px cyan, 0px 0px 40px rgb(15, 185, 194), 0px 0px 60px rgb(15, 185, 194),0px 0px 80px rgb(15, 185, 194), 0px 0px 100px rgb(15, 185, 194);
+  transition: 0.6s;
+}
+
+
+#myInput {
+  width: 800px;
+  height: 80px;
+  font-size: 50px;
+  border-radius: 40px;
+  background-color: rgb(41, 40, 38);
+  color: aqua;
+  border: 0px;
+}
+
+#copyButton {
+  border: 0px;
+  color: #7ddb3e;
+  background-color: rgb(41, 40, 38);
+  font-size: 30px;
+  letter-spacing: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.pass-container {
+  margin-top: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  row-gap: 40px;
+}
+
+.hidden {
+  display: none;
 }

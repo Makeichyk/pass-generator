@@ -11,8 +11,11 @@
   <div class="logo-container">
     <h1>CREATE YOUR PASSWORD</h1>
   </div>
-  <div class="creation-button"><p>CREATE!</p></div>
-  <div class="pass-container"></div>
+  <div class="creation-button"><p>CREATE</p></div>
+  <div class="pass-container hidden">
+    <input type="text" value="" id="myInput">
+    <button id="copyButton" onclick="copyText()">Copy text</button>
+  </div>
   <script src="./script.js"></script>
 </body>
 </html>
