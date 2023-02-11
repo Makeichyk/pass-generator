@@ -10,8 +10,7 @@ body {
 }
 
 .logo-container h1 {
-  font-size: 75px;
-  color: aqua;
+  font-size: 50px;
   color: rgb(255, 255, 255, 0.8);
   letter-spacing: 1rem;
   font-family: 'Rajdhani', sans-serif;
@@ -46,7 +45,7 @@ body {
 .creation-button p {
   padding-left: 14px;
   color: rgb(255, 255, 255, 0.8);
-  font-size: 55px;
+  font-size: 35px;
   letter-spacing: 1rem;
   font-family: 'Rajdhani', sans-serif;
   text-shadow: 0px 0px 20px cyan, 0px 0px 40px rgb(15, 185, 194), 0px 0px 60px rgb(15, 185, 194), 0px 0px 80px rgb(15, 185, 194), 0px 0px 100px rgb(15, 185, 194);
