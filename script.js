@@ -126,7 +126,7 @@ function draw() {
 <div class="creation-button">
   <p>CREATE</p>
 </div>
-<div class="pass-container"> 
+<div class="pass-container hidden"> 
   <input type="text" value="" id="pass-field">
   <button id="copyButton" onclick="copyText()">
     <span>Copy password</span>
