@@ -1,11 +1,26 @@
 draw();
+
 document.querySelector(".creation-button").onclick = showPass;
+
+function showPass() {
+  if (document.querySelector(".hidden")) {
+    document.querySelector(".hidden").classList.remove("hidden");
+  }
+
+  const length = (function ask() {
+    const len = prompt("Specify password length", 8);
+    return isNaN(len) || +len < 1 || +len > 100 ? ask() : len;
+  })();
+
+  document.querySelector("input").value = `${createPass(Number(length))}`;
+}
+
 function randomInteger(max) {
   return Math.floor(Math.random() * max);
 }
 
 function createPass(passLength) {
-  const CHAR = [
+  const CHARS = [
     "0",
     "1",
     "2",
@@ -69,29 +84,29 @@ function createPass(passLength) {
     "Y",
     "Z",
   ];
-  let result = [];
+  const result = [];
   for (let i = 0; i < passLength; i++) {
-    result.push(CHAR[randomInteger(CHAR.length)]);
+    result.push(CHARS[randomInteger(CHARS.length)]);
   }
-  let password = result.join("");
+  const password = result.join("");
   return password;
 }
 
 function copyText() {
-  const writeBtn = document.querySelector("#copyButton");
-  const inputEl = document.querySelector("#myInput");
+  const copyBtn = document.querySelector("#copyButton");
+  const passField = document.querySelector("#pass-field");
 
-  writeBtn.addEventListener("click", () => {
-    const inputValue = inputEl.value.trim();
+  copyBtn.addEventListener("click", () => {
+    const inputValue = passField.value.trim();
     if (inputValue) {
       navigator.clipboard
         .writeText(inputValue)
         .then(() => {
-          if (writeBtn.innerText !== "Copied!") {
-            const originalText = writeBtn.innerText;
-            writeBtn.innerText = "Copied!";
+          if (copyBtn.innerText !== "Copied!") {
+            const originalText = copyBtn.innerText;
+            copyBtn.innerText = "Copied!";
             setTimeout(() => {
-              writeBtn.innerText = originalText;
+              copyBtn.innerText = originalText;
             }, 1500);
           }
         })
@@ -102,26 +117,19 @@ function copyText() {
   });
 }
 
-function showPass() {
-  if (document.querySelector(".hidden")) {
-    document.querySelector(".hidden").classList.remove("hidden");
-  }
-
-  let length = prompt("Specify password length", 8);
-  document.querySelector("input").value = ` ${createPass(Number(length))}`;
-}
-
-function draw(){
-  document.querySelector(".content-conatiner").innerHTML = `<div class="logo-container">
+function draw() {
+  document.querySelector(
+    ".content-conatiner"
+  ).innerHTML = `<div class="logo-container">
   <h1>CREATE YOUR PASSWORD</h1>
 </div>
 <div class="creation-button">
   <p>CREATE</p>
 </div>
-<div class="pass-container hidden"> 
-  <input type="text" value="" id="myInput">
+<div class="pass-container"> 
+  <input type="text" value="" id="pass-field">
   <button id="copyButton" onclick="copyText()">
     <span>Copy password</span>
   </button>
-</div>`
+</div>`;
 }
