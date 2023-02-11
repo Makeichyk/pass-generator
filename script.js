@@ -1,4 +1,5 @@
 draw();
+copyText();
 
 document.querySelector(".creation-button").onclick = showPass;
 
@@ -128,7 +129,7 @@ function draw() {
 </div>
 <div class="pass-container hidden"> 
   <input type="text" value="" id="pass-field">
-  <button id="copyButton" onclick="copyText()">
+  <button id="copyButton">
     <span>Copy password</span>
   </button>
 </div>`;
