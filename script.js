@@ -1,7 +1,7 @@
 draw();
 copyText();
 
-document.querySelector(".creation-button").onclick = showPass;
+document.querySelector(".creation-button").addEventListener("click", showPass);
 
 function showPass() {
   if (document.querySelector(".hidden")) {
